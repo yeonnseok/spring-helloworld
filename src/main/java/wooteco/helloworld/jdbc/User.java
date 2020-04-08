@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import java.time.LocalDateTime;
 
 public class User {
+    @Id
     private Long id;
     private String name;
     private LocalDateTime createAt;
