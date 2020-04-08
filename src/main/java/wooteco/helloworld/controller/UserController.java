@@ -1,6 +1,6 @@
 package wooteco.helloworld.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import wooteco.helloworld.domain.User;
 
 import java.util.Map;
@@ -10,28 +10,34 @@ public class UserController {
     /**
      * GET /users
      */
-    public String sayHi(String name) {
+    @GetMapping("/users")
+    public String sayHi(@RequestParam(defaultValue = "") String name) {
         return "Hi " + name;
     }
 
     /**
      * GET /users/{id}
      */
-    public String retrieveUser(Long id) {
+    @GetMapping("/users/{id}")
+    public String retrieveUser(@PathVariable Long id) {
         return "user's id is " + id;
     }
 
     /**
      * POST /users
      */
-    public String createUserWithJson(User user) {
+    @PostMapping("/users")
+    @ResponseBody
+    public String createUserWithJson(@RequestBody User user) {
         return "Hello " + user.getName();
     }
 
     /**
      * POST /users/form
      */
-    public String createUserWithForm(Map<String, String> paramMap) {
+    @PostMapping("/users/form")
+    @ResponseBody
+    public String createUserWithForm(@RequestParam Map<String, String> paramMap) {
         return "Hello " + paramMap.get("name");
     }
 
