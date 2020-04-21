@@ -12,8 +12,10 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
 /**
- * # 실습 내용
+ * # 실습내용
+ * 동시에 오는 요청이 정상동작 하도록 수정하세요.
  *
+ * # 방법
  * 1. SpringCoreService빈을 Component Scan 할 수 있도록 위치를 옮겨 주세요.
  * 2. SpringCoreService의 상태를 제거해주세요.
  */
