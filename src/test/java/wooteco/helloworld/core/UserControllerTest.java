@@ -13,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = HelloApplication.class)
 public class UserControllerTest {
+
     @Autowired
     private UserController userController;
 
